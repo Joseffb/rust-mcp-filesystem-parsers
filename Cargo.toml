@@ -16,11 +16,16 @@ rust-mcp-sdk = {version="0.7", default-features = false, features = [
     "stdio",
     "2025_06_18",
 ] }
+
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 anyhow = "1.0"
-pdf_extract = "0.6"
-docx-rs = "0.3"
+
+# Parser dependencies
+pdf-extract = "0.10.0"
+docx-rs = "0.4.18"
+tree_magic_mini = "3.0"
+
 thiserror = { version = "2.0" }
 dirs = "6.0"
 walkdir = "2.5"
@@ -28,13 +33,11 @@ similar = "=2.7"
 chrono = "0.4"
 clap = { version = "4.5", features = ["derive","env"] }
 tokio = "1.4"
-serde = "1.0"
-serde_json = "1.0"
 async-trait = "0.1"
 futures = "0.3"
 tokio-util = "0.7"
 async_zip = { version = "0.0", features = ["full"] }
-grep = "0.3"
+grep = "0.4.1"
 base64 =  "0.22"
 infer = "0.19.0"
 rayon = "1.11.0"

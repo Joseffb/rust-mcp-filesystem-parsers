@@ -10,6 +10,9 @@ mod list_allowed_directories;
 mod list_directory;
 mod list_directory_with_sizes;
 mod move_file;
+mod parse;
+mod parse_pdf_file;
+mod parse_docx_file;
 mod read_file_lines;
 mod read_media_file;
 mod read_multiple_media_files;
@@ -33,6 +36,9 @@ pub use list_allowed_directories::ListAllowedDirectories;
 pub use list_directory::ListDirectory;
 pub use list_directory_with_sizes::ListDirectoryWithSizes;
 pub use move_file::MoveFile;
+pub use parse::ParseFile;
+pub use parse_pdf_file::ParsePdfFile;
+pub use parse_docx_file::ParseDocxFile;
 pub use read_file_lines::ReadFileLines;
 pub use read_media_file::ReadMediaFile;
 pub use read_multiple_media_files::ReadMultipleMediaFiles;
@@ -71,13 +77,14 @@ tool_box!(
         ReadFileLines,
         FindEmptyDirectories,
         CalculateDirectorySize,
-        FindDuplicateFiles
+        FindDuplicateFiles,
+        ParseFile,
+        ParsePdfFile,
+        ParseDocxFile
     ]
 );
 
 impl FileSystemTools {
-    // Determines whether the filesystem tool requires write access to the filesystem.
-    // Returns `true` for tools that modify files or directories, and `false` otherwise.
     pub fn require_write_access(&self) -> bool {
         match self {
             FileSystemTools::CreateDirectory(_)
@@ -87,7 +94,8 @@ impl FileSystemTools {
             | FileSystemTools::ZipFiles(_)
             | FileSystemTools::UnzipFile(_)
             | FileSystemTools::ZipDirectory(_) => true,
-            FileSystemTools::ReadTextFile(_)
+
+            | FileSystemTools::ReadTextFile(_)
             | FileSystemTools::DirectoryTree(_)
             | FileSystemTools::GetFileInfo(_)
             | FileSystemTools::ListAllowedDirectories(_)
@@ -103,7 +111,10 @@ impl FileSystemTools {
             | FileSystemTools::FindEmptyDirectories(_)
             | FileSystemTools::CalculateDirectorySize(_)
             | FileSystemTools::FindDuplicateFiles(_)
-            | FileSystemTools::SearchFiles(_) => false,
+            | FileSystemTools::SearchFiles(_)
+            | FileSystemTools::ParseFile(_) => false,
+            | FileSystemTools::ParsePdfFile(_) => false,
+            | FileSystemTools::ParseDocxFile(_) => false,
         }
     }
 }

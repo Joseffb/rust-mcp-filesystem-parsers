@@ -219,7 +219,10 @@ impl ServerHandler for FileSystemHandler {
             ReadFileLines,
             FindEmptyDirectories,
             CalculateDirectorySize,
-            FindDuplicateFiles
+            FindDuplicateFiles,
+            ParseFile,
+            ParsePdfFile,
+            ParseDocxFile
         )
     }
 }
