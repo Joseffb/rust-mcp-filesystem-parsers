@@ -2,6 +2,7 @@
 name = "rust-mcp-filesystem-parsers"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/Joseffb/rust-mcp-filesystem-parsers"
 
 [package.metadata.wix]
 upgrade-guid = "944FE3C9-C8C2-4114-8C8F-5330720E781F"
