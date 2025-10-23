@@ -9,11 +9,11 @@ use common::get_temp_dir;
 use common::setup_service;
 use dirs::home_dir;
 use grep::matcher::Match;
-use rust_mcp_filesystem::error::ServiceError;
-use rust_mcp_filesystem::fs_service::FileSystemService;
-use rust_mcp_filesystem::fs_service::file_info::FileInfo;
-use rust_mcp_filesystem::fs_service::utils::*;
-use rust_mcp_filesystem::tools::EditOperation;
+use rust_mcp_filesystem_parsers::error::ServiceError;
+use rust_mcp_filesystem_parsers::fs_service::FileSystemService;
+use rust_mcp_filesystem_parsers::fs_service::file_info::FileInfo;
+use rust_mcp_filesystem_parsers::fs_service::utils::*;
+use rust_mcp_filesystem_parsers::tools::EditOperation;
 use std::fs::{self, File};
 use std::io::Write;
 use std::path::{Path, PathBuf};
@@ -411,7 +411,7 @@ fn test_format_system_time() {
 #[cfg(unix)]
 #[test]
 fn test_format_permissions_unix() {
-    use rust_mcp_filesystem::fs_service::utils::format_permissions;
+    use rust_mcp_filesystem_parsers::fs_service::utils::format_permissions;
 
     let temp_dir = get_temp_dir();
     let file_path = temp_dir.join("test.txt");

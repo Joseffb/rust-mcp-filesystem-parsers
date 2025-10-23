@@ -60,17 +60,17 @@
 
     <Product
         Id='*'
-        Name='rust-mcp-filesystem'
+        Name='rust-mcp-filesystem-parsers'
         UpgradeCode='944FE3C9-C8C2-4114-8C8F-5330720E781F'
-        Manufacturer='Ali Hashemi'
+        Manufacturer='Joseff Betancourt'
         Language='1033'
         Codepage='1252'
         Version='$(var.Version)'>
 
         <Package Id='*'
             Keywords='Installer'
-            Description='Blazing-fast, asynchronous MCP server for seamless filesystem operations.'
-            Manufacturer='Ali Hashemi'
+            Description='Filesystem parser utilities for the Rust MCP toolchain (forked from rust-mcp-stack/rust-mcp-filesystem)'
+            Manufacturer='Joseff Betancourt'
             InstallerVersion='450'
             Languages='1033'
             Compressed='yes'
@@ -83,11 +83,11 @@
             DowngradeErrorMessage='A newer version of [ProductName] is already installed. Setup will now exit.'/>
 
         <Media Id='1' Cabinet='media1.cab' EmbedCab='yes' DiskPrompt='CD-ROM #1'/>
-        <Property Id='DiskPrompt' Value='rust-mcp-filesystem Installation'/>
+        <Property Id='DiskPrompt' Value='rust-mcp-filesystem-parsers Installation'/>
 
         <Directory Id='TARGETDIR' Name='SourceDir'>
             <Directory Id='$(var.PlatformProgramFilesFolder)' Name='PFiles'>
-                <Directory Id='APPLICATIONFOLDER' Name='rust-mcp-filesystem'>
+                <Directory Id='APPLICATIONFOLDER' Name='rust-mcp-filesystem-parsers'>
                     
                     <!--
                       Enabling the license sidecar file in the installer is a four step process:
@@ -123,9 +123,9 @@
                         <Component Id='binary0' Guid='*'>
                             <File
                                 Id='exe0'
-                                Name='rust-mcp-filesystem.exe'
+                                Name='rust-mcp-filesystem-parsers.exe'
                                 DiskId='1'
-                                Source='$(var.CargoTargetBinDir)\rust-mcp-filesystem.exe'
+                                Source='$(var.CargoTargetBinDir)\rust-mcp-filesystem-parsers.exe'
                                 KeyPath='yes'/>
                         </Component>
                     </Directory>
@@ -173,7 +173,7 @@
         <!--<Icon Id='ProductICO' SourceFile='wix\Product.ico'/>-->
         <!--<Property Id='ARPPRODUCTICON' Value='ProductICO' />-->
 
-        <Property Id='ARPHELPLINK' Value='https://github.com/rust-mcp-stack/rust-mcp-filesystem'/>
+        <Property Id='ARPHELPLINK' Value='https://github.com/Joseffb/rust-mcp-filesystem-parsers'/>
         
         <UI>
             <UIRef Id='WixUI_FeatureTree'/>

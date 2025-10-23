@@ -1,12 +1,12 @@
 [workspace]
 members = ["cargo:."]
 
-# Config for 'dist'
+# Config for 'cargo dist'
 [dist]
 # Path that installers should place binaries in
 install-path = "~/.rust-mcp-stack/bin"
-# The preferred dist version to use in CI (Cargo.toml SemVer syntax)
-cargo-dist-version = "0.28.3"
+# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.20.0"
 # CI backends to support
 ci = "github"
 # The installers to generate for each app
@@ -17,7 +17,7 @@ targets = ["aarch64-apple-darwin", "aarch64-unknown-linux-gnu", "x86_64-apple-da
 unix-archive = ".tar.gz"
 # Whether to install an updater program
 install-updater = false
-# Whether dist should create a Github Release or use an existing draft
+# Whether cargo-dist should create a Github Release or use an existing draft
 create-release = false
 # A GitHub repo to push Homebrew formulas to
 tap = "rust-mcp-stack/homebrew-tap"
@@ -25,24 +25,12 @@ tap = "rust-mcp-stack/homebrew-tap"
 publish-jobs = ["homebrew"]
 
 [dist.github-custom-runners]
+# one flat map of targets → runner
 global = "ubuntu-22.04"
+x86_64-unknown-linux-gnu = "ubuntu-22.04"
+aarch64-unknown-linux-gnu = "ubuntu-22.04"
 
-[dist.github-custom-runners.x86_64-unknown-linux-gnu]
-global = "ubuntu-22.04"
-runner = "ubuntu-22.04"
-
-[dist.github-custom-runners.aarch64-unknown-linux-gnu]
-runner = "ubuntu-22.04"
-container = { image = "quay.io/pypa/manylinux_2_28_x86_64", host = "x86_64-unknown-linux-musl" }
-
-# allow-dirty = ["ci"]
-
-# [dist.github-custom-runners.x86_64-unknown-linux-gnu]
-# container = { image = "quay.io/pypa/manylinux_2_28_x86_64", host = "x86_64-unknown-linux-musl" }
-
-# [dist.github-custom-runners.aarch64-unknown-linux-gnu]
-# container = { image = "quay.io/pypa/manylinux_2_28_x86_64", host = "x86_64-unknown-linux-musl" }
-
-
-# [package]
-# homepage = "https://rust-mcp-stack.github.io/rust-mcp-filesystem"
+[dist.github-containers]
+# optional container hints, flattened into a single section
+x86_64-unknown-linux-gnu = { image = "quay.io/pypa/manylinux_2_28_x86_64", host = "x86_64-unknown-linux-musl" }
+aarch64-unknown-linux-gnu = { image = "quay.io/pypa/manylinux_2_28_x86_64", host = "x86_64-unknown-linux-musl" }

@@ -1,6 +1,5 @@
 use clap::Parser;
-use rust_mcp_filesystem::{cli, server};
-
+use rust_mcp_filesystem_parsers::{cli, server};
 #[tokio::main]
 async fn main() {
     let arguments = cli::CommandArguments::parse();
