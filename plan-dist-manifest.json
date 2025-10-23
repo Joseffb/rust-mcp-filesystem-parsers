@@ -1,0 +1,365 @@
+{
+  "dist_version": "0.20.0",
+  "announcement_tag": "v0.1.0",
+  "announcement_tag_is_implicit": true,
+  "announcement_is_prerelease": false,
+  "announcement_title": "0.1.0 (2025-04-18)",
+  "announcement_changelog": "### ⚙️ Miscellaneous Chores\n\n* Release 0.1.0 ([042f817](https://github.com/rust-mcp-stack/rust-mcp-filesystem/commit/042f817ab05129706e532991ef14fc7a4d23bda6))",
+  "announcement_github_body": "## Release Notes\n\n### ⚙️ Miscellaneous Chores\n\n* Release 0.1.0 ([042f817](https://github.com/rust-mcp-stack/rust-mcp-filesystem/commit/042f817ab05129706e532991ef14fc7a4d23bda6))\n\n## Install rust-mcp-filesystem-parsers 0.1.0\n\n### Install prebuilt binaries via shell script\n\n```sh\ncurl --proto '=https' --tlsv1.2 -LsSf https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-installer.sh | sh\n```\n\n### Install prebuilt binaries via powershell script\n\n```sh\npowershell -c \"irm https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-installer.ps1 | iex\"\n```\n\n### Install prebuilt binaries via Homebrew\n\n```sh\nbrew install rust-mcp-stack/tap/rust-mcp-filesystem-parsers\n```\n\n## Download rust-mcp-filesystem-parsers 0.1.0\n\n|  File  | Platform | Checksum |\n|--------|----------|----------|\n| [rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz) | Apple Silicon macOS | [checksum](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz.sha256) |\n| [rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz) | Intel macOS | [checksum](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz.sha256) |\n| [rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip) | x64 Windows | [checksum](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip.sha256) |\n| [rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi) | x64 Windows | [checksum](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi.sha256) |\n| [rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz) | ARM64 Linux | [checksum](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz.sha256) |\n| [rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz) | x64 Linux | [checksum](https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz.sha256) |\n\n",
+  "releases": [
+    {
+      "app_name": "rust-mcp-filesystem-parsers",
+      "app_version": "0.1.0",
+      "artifacts": [
+        "source.tar.gz",
+        "source.tar.gz.sha256",
+        "rust-mcp-filesystem-parsers-installer.sh",
+        "rust-mcp-filesystem-parsers-installer.ps1",
+        "rust-mcp-filesystem-parsers.rb",
+        "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz",
+        "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz.sha256",
+        "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz",
+        "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz.sha256",
+        "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz",
+        "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz.sha256",
+        "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip",
+        "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip.sha256",
+        "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi",
+        "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi.sha256",
+        "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz",
+        "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz.sha256"
+      ],
+      "hosting": {
+        "github": {
+          "artifact_download_url": "https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0",
+          "owner": "Joseffb",
+          "repo": "rust-mcp-filesystem-parsers"
+        }
+      }
+    }
+  ],
+  "artifacts": {
+    "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz": {
+      "name": "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz",
+      "kind": "executable-zip",
+      "target_triples": [
+        "aarch64-apple-darwin"
+      ],
+      "assets": [
+        {
+          "name": "CHANGELOG.md",
+          "path": "CHANGELOG.md",
+          "kind": "changelog"
+        },
+        {
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "kind": "license"
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "kind": "readme"
+        },
+        {
+          "id": "rust-mcp-filesystem-parsers-aarch64-apple-darwin-exe-rust-mcp-filesystem-parsers",
+          "name": "rust-mcp-filesystem-parsers",
+          "path": "rust-mcp-filesystem-parsers",
+          "kind": "executable"
+        }
+      ],
+      "checksum": "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz.sha256"
+    },
+    "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz.sha256": {
+      "name": "rust-mcp-filesystem-parsers-aarch64-apple-darwin.tar.gz.sha256",
+      "kind": "checksum",
+      "target_triples": [
+        "aarch64-apple-darwin"
+      ]
+    },
+    "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz": {
+      "name": "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz",
+      "kind": "executable-zip",
+      "target_triples": [
+        "aarch64-unknown-linux-gnu"
+      ],
+      "assets": [
+        {
+          "name": "CHANGELOG.md",
+          "path": "CHANGELOG.md",
+          "kind": "changelog"
+        },
+        {
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "kind": "license"
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "kind": "readme"
+        },
+        {
+          "id": "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu-exe-rust-mcp-filesystem-parsers",
+          "name": "rust-mcp-filesystem-parsers",
+          "path": "rust-mcp-filesystem-parsers",
+          "kind": "executable"
+        }
+      ],
+      "checksum": "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz.sha256"
+    },
+    "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz.sha256": {
+      "name": "rust-mcp-filesystem-parsers-aarch64-unknown-linux-gnu.tar.gz.sha256",
+      "kind": "checksum",
+      "target_triples": [
+        "aarch64-unknown-linux-gnu"
+      ]
+    },
+    "rust-mcp-filesystem-parsers-installer.ps1": {
+      "name": "rust-mcp-filesystem-parsers-installer.ps1",
+      "kind": "installer",
+      "target_triples": [
+        "aarch64-pc-windows-msvc",
+        "x86_64-pc-windows-msvc"
+      ],
+      "install_hint": "powershell -c \"irm https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-installer.ps1 | iex\"",
+      "description": "Install prebuilt binaries via powershell script"
+    },
+    "rust-mcp-filesystem-parsers-installer.sh": {
+      "name": "rust-mcp-filesystem-parsers-installer.sh",
+      "kind": "installer",
+      "target_triples": [
+        "aarch64-apple-darwin",
+        "aarch64-unknown-linux-gnu",
+        "x86_64-apple-darwin",
+        "x86_64-pc-windows-gnu",
+        "x86_64-unknown-linux-gnu"
+      ],
+      "install_hint": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Joseffb/rust-mcp-filesystem-parsers/releases/download/v0.1.0/rust-mcp-filesystem-parsers-installer.sh | sh",
+      "description": "Install prebuilt binaries via shell script"
+    },
+    "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz",
+      "kind": "executable-zip",
+      "target_triples": [
+        "x86_64-apple-darwin"
+      ],
+      "assets": [
+        {
+          "name": "CHANGELOG.md",
+          "path": "CHANGELOG.md",
+          "kind": "changelog"
+        },
+        {
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "kind": "license"
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "kind": "readme"
+        },
+        {
+          "id": "rust-mcp-filesystem-parsers-x86_64-apple-darwin-exe-rust-mcp-filesystem-parsers",
+          "name": "rust-mcp-filesystem-parsers",
+          "path": "rust-mcp-filesystem-parsers",
+          "kind": "executable"
+        }
+      ],
+      "checksum": "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz.sha256"
+    },
+    "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz.sha256": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-apple-darwin.tar.gz.sha256",
+      "kind": "checksum",
+      "target_triples": [
+        "x86_64-apple-darwin"
+      ]
+    },
+    "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi",
+      "kind": "installer",
+      "target_triples": [
+        "x86_64-pc-windows-msvc"
+      ],
+      "assets": [
+        {
+          "id": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc-exe-rust-mcp-filesystem-parsers",
+          "name": "rust-mcp-filesystem-parsers",
+          "path": "rust-mcp-filesystem-parsers.exe",
+          "kind": "executable"
+        }
+      ],
+      "description": "install via msi",
+      "checksum": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi.sha256"
+    },
+    "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi.sha256": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.msi.sha256",
+      "kind": "checksum",
+      "target_triples": [
+        "x86_64-pc-windows-msvc"
+      ]
+    },
+    "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip",
+      "kind": "executable-zip",
+      "target_triples": [
+        "x86_64-pc-windows-msvc"
+      ],
+      "assets": [
+        {
+          "name": "CHANGELOG.md",
+          "path": "CHANGELOG.md",
+          "kind": "changelog"
+        },
+        {
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "kind": "license"
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "kind": "readme"
+        },
+        {
+          "id": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc-exe-rust-mcp-filesystem-parsers",
+          "name": "rust-mcp-filesystem-parsers",
+          "path": "rust-mcp-filesystem-parsers.exe",
+          "kind": "executable"
+        }
+      ],
+      "checksum": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip.sha256"
+    },
+    "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip.sha256": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-pc-windows-msvc.zip.sha256",
+      "kind": "checksum",
+      "target_triples": [
+        "x86_64-pc-windows-msvc"
+      ]
+    },
+    "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz",
+      "kind": "executable-zip",
+      "target_triples": [
+        "x86_64-unknown-linux-gnu"
+      ],
+      "assets": [
+        {
+          "name": "CHANGELOG.md",
+          "path": "CHANGELOG.md",
+          "kind": "changelog"
+        },
+        {
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "kind": "license"
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "kind": "readme"
+        },
+        {
+          "id": "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu-exe-rust-mcp-filesystem-parsers",
+          "name": "rust-mcp-filesystem-parsers",
+          "path": "rust-mcp-filesystem-parsers",
+          "kind": "executable"
+        }
+      ],
+      "checksum": "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz.sha256"
+    },
+    "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz.sha256": {
+      "name": "rust-mcp-filesystem-parsers-x86_64-unknown-linux-gnu.tar.gz.sha256",
+      "kind": "checksum",
+      "target_triples": [
+        "x86_64-unknown-linux-gnu"
+      ]
+    },
+    "rust-mcp-filesystem-parsers.rb": {
+      "name": "rust-mcp-filesystem-parsers.rb",
+      "kind": "installer",
+      "target_triples": [
+        "aarch64-apple-darwin",
+        "aarch64-unknown-linux-gnu",
+        "x86_64-apple-darwin",
+        "x86_64-pc-windows-gnu",
+        "x86_64-unknown-linux-gnu"
+      ],
+      "install_hint": "brew install rust-mcp-stack/tap/rust-mcp-filesystem-parsers",
+      "description": "Install prebuilt binaries via Homebrew"
+    },
+    "source.tar.gz": {
+      "name": "source.tar.gz",
+      "kind": "source-tarball",
+      "checksum": "source.tar.gz.sha256"
+    },
+    "source.tar.gz.sha256": {
+      "name": "source.tar.gz.sha256",
+      "kind": "checksum"
+    }
+  },
+  "systems": {
+    "plan:all:": {
+      "id": "plan:all:",
+      "cargo_version_line": "cargo 1.90.0 (Homebrew)"
+    }
+  },
+  "publish_prereleases": false,
+  "force_latest": false,
+  "ci": {
+    "github": {
+      "artifacts_matrix": {
+        "include": [
+          {
+            "targets": [
+              "aarch64-apple-darwin"
+            ],
+            "runner": "macos-12",
+            "install_dist": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/axodotdev/cargo-dist/releases/download/v0.20.0/cargo-dist-installer.sh | sh",
+            "dist_args": "--artifacts=local --target=aarch64-apple-darwin",
+            "cache_provider": "github"
+          },
+          {
+            "targets": [
+              "aarch64-unknown-linux-gnu"
+            ],
+            "runner": "ubuntu-22.04",
+            "install_dist": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/axodotdev/cargo-dist/releases/download/v0.20.0/cargo-dist-installer.sh | sh",
+            "dist_args": "--artifacts=local --target=aarch64-unknown-linux-gnu",
+            "cache_provider": "github"
+          },
+          {
+            "targets": [
+              "x86_64-apple-darwin"
+            ],
+            "runner": "macos-12",
+            "install_dist": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/axodotdev/cargo-dist/releases/download/v0.20.0/cargo-dist-installer.sh | sh",
+            "dist_args": "--artifacts=local --target=x86_64-apple-darwin",
+            "cache_provider": "github"
+          },
+          {
+            "targets": [
+              "x86_64-pc-windows-msvc"
+            ],
+            "runner": "windows-2019",
+            "install_dist": "powershell -c \"irm https://github.com/axodotdev/cargo-dist/releases/download/v0.20.0/cargo-dist-installer.ps1 | iex\"",
+            "dist_args": "--artifacts=local --target=x86_64-pc-windows-msvc",
+            "cache_provider": "github"
+          },
+          {
+            "targets": [
+              "x86_64-unknown-linux-gnu"
+            ],
+            "runner": "ubuntu-22.04",
+            "install_dist": "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/axodotdev/cargo-dist/releases/download/v0.20.0/cargo-dist-installer.sh | sh",
+            "dist_args": "--artifacts=local --target=x86_64-unknown-linux-gnu",
+            "cache_provider": "github"
+          }
+        ]
+      },
+      "pr_run_mode": "plan"
+    }
+  },
+  "linkage": []
+}

@@ -1,0 +1,6 @@
+This is a test file for rust-mcp-fs-parser.
+
+It checks that plain text files are read correctly,
+without altering line breaks or punctuation.
+
+-- End of File --
