@@ -5,7 +5,8 @@ edition = "2021"
 repository = "https://github.com/Joseffb/rust-mcp-filesystem-parsers"
 forked-from = "https://github.com/rust-mcp-stack/rust-mcp-filesystem"
 authors = ["Joseff Betancourt"]
-description = "Filesystem parser utilities for the Rust MCP toolchain (forked from rust-mcp-stack/rust-mcp-filesystem)"license = "MIT"
+description = "Filesystem parser utilities for the Rust MCP toolchain (forked from rust-mcp-stack/rust-mcp-filesystem)"
+license = "MIT"
 readme = "README.md"
 keywords = ["mcp", "filesystem", "parser", "docx", "pdf"]
 categories = ["command-line-utilities", "filesystem", "development-tools"]
