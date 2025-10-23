@@ -6,7 +6,7 @@ use std::{
 };
 
 use clap::Parser;
-use rust_mcp_filesystem::{
+use rust_mcp_filesystem_parsers::{
     cli::CommandArguments,
     fs_service::{FileSystemService, file_info::FileInfo},
 };

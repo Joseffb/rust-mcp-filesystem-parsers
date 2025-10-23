@@ -2,7 +2,7 @@
 pub mod common;
 
 use common::setup_service;
-use rust_mcp_filesystem::tools::*;
+use rust_mcp_filesystem_parsers::tools::*;
 use rust_mcp_sdk::schema::{ContentBlock, schema_utils::CallToolError};
 use std::{collections::HashSet, fs};
 
@@ -163,6 +163,74 @@ async fn ensure_tools_duplication() {
     assert_eq!(duplicate_names.join(","), "");
     assert_eq!(duplicate_titles.join(","), "");
     assert_eq!(duplicate_descriptions.join(","), "");
+}
+#[tokio::test]
+async fn test_parse_text_file() {
+    let (temp_dir, service, _allowed_dirs) = setup_service(vec!["samples".to_string()]);
+    let sample_src = std::path::Path::new("tests/samples/file-sample.txt");
+    let sample_dst = temp_dir.join("samples").join("file-sample.txt");
+    std::fs::create_dir_all(sample_dst.parent().unwrap()).unwrap();
+    std::fs::copy(&sample_src, &sample_dst).unwrap();
+
+    let params = ParseFile { path: sample_dst.to_str().unwrap().to_string() };
+    let result = ParseFile::run_tool(params, &service).await;
+
+    assert!(result.is_ok(), "ParseFile failed for text file: {:?}", result);
+    let call_result = result.unwrap();
+
+    assert!(!call_result.content.is_empty());
+    match &call_result.content[0] {
+        ContentBlock::TextContent(text) => {
+            assert!(!text.text.is_empty(), "Parsed text file returned empty output");
+        }
+        _ => panic!("Expected TextContent"),
+    }
+}
+
+#[tokio::test]
+async fn test_parse_pdf_file() {
+    let (temp_dir, service, _allowed_dirs) = setup_service(vec!["samples".to_string()]);
+    let sample_src = std::path::Path::new("tests/samples/file-sample_1MB.pdf");
+    let sample_dst = temp_dir.join("samples").join("file-sample_1MB.pdf");
+    std::fs::create_dir_all(sample_dst.parent().unwrap()).unwrap();
+    std::fs::copy(&sample_src, &sample_dst).unwrap();
+
+    let params = ParseFile { path: sample_dst.to_str().unwrap().to_string() };
+    let result = ParseFile::run_tool(params, &service).await;
+
+    assert!(result.is_ok(), "ParseFile failed for PDF file: {:?}", result);
+    let call_result = result.unwrap();
+
+    assert!(!call_result.content.is_empty());
+    match &call_result.content[0] {
+        ContentBlock::TextContent(text) => {
+            assert!(!text.text.is_empty(), "Parsed PDF file returned empty output");
+        }
+        _ => panic!("Expected TextContent"),
+    }
+}
+
+#[tokio::test]
+async fn test_parse_docx_file() {
+    let (temp_dir, service, _allowed_dirs) = setup_service(vec!["samples".to_string()]);
+    let sample_src = std::path::Path::new("tests/samples/file-sample_100kB.docx");
+    let sample_dst = temp_dir.join("samples").join("file-sample_100kB.docx");
+    std::fs::create_dir_all(sample_dst.parent().unwrap()).unwrap();
+    std::fs::copy(&sample_src, &sample_dst).unwrap();
+
+    let params = ParseFile { path: sample_dst.to_str().unwrap().to_string() };
+    let result = ParseFile::run_tool(params, &service).await;
+
+    assert!(result.is_ok(), "ParseFile failed for DOCX file: {:?}", result);
+    let call_result = result.unwrap();
+
+    assert!(!call_result.content.is_empty());
+    match &call_result.content[0] {
+        ContentBlock::TextContent(text) => {
+            assert!(!text.text.is_empty(), "Parsed DOCX file returned empty output");
+        }
+        _ => panic!("Expected TextContent"),
+    }
 }
 
 #[tokio::test]

@@ -25,6 +25,7 @@ anyhow = "1.0"
 pdf-extract = "0.10.0"
 docx-rs = "0.4.18"
 tree_magic_mini = "3.0"
+mime_guess = "2"
 
 thiserror = { version = "2.0" }
 dirs = "6.0"

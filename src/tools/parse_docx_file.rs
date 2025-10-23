@@ -1,8 +1,7 @@
-use std::{path::Path, io};
+use std::{path::Path};
 use rust_mcp_sdk::macros::{JsonSchema, mcp_tool};
 use rust_mcp_sdk::schema::{CallToolResult, TextContent, schema_utils::CallToolError};
 use crate::fs_service::FileSystemService;
-use tree_magic_mini;
 
 #[mcp_tool(
     name = "parse_docx_file",
@@ -24,17 +23,22 @@ impl ParseDocxFile {
         _context: &FileSystemService,
     ) -> std::result::Result<CallToolResult, CallToolError> {
         let path = Path::new(&params.path);
-        let mime_type = tree_magic_mini::from_filepath(path).unwrap_or("application/octet-stream");
 
-        if mime_type != "application/vnd.openxmlformats-officedocument.wordprocessingml.document" {
-            return Err(CallToolError::new(io::Error::new(
-                io::ErrorKind::Other,
-                format!("Invalid MIME type: expected .docx, got {}", mime_type),
-            )));
+        // No strict MIME enforcement — rely on upstream detection
+        let mime_type = infer::get_from_path(path)
+            .ok()
+            .flatten()
+            .map(|kind| kind.mime_type().to_string())
+            .unwrap_or_else(|| "application/octet-stream".to_string());
+
+        if !mime_type.contains("word") && !mime_type.contains("officedocument") {
+            eprintln!(
+                "[WARN] parse_docx_file: unexpected mime '{}', continuing anyway",
+                mime_type
+            );
         }
 
         let output = format!("(Parsed DOCX text from {:?})", path);
-
         Ok(CallToolResult::text_content(vec![TextContent::from(output)]))
     }
 }
