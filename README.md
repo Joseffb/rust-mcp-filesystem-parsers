@@ -1,76 +1,87 @@
-<p align="center">
-  <img width="96" src="./docs/_media/rust-mcp-filesystem.png" alt="Rust MCP Filesystem Logo" width="300">
-</p>
+# Rust MCP Filesystem — Extended Parsers Fork
 
-# Rust MCP Filesystem
+This repository is a **fork** of the original `rust-mcp-filesystem`, extending it with document-parsing capabilities to make file contents (PDFs, spreadsheets, and similar documents) directly accessible to MCP clients.  
+It transforms a basic filesystem server into a more powerful content-aware MCP backend — ideal for AI assistants, RAG pipelines, and automated document workflows.
 
-Rust MCP Filesystem is a blazingly fast, asynchronous, and lightweight MCP (Model Context Protocol) server designed for efficient handling of various filesystem operations.
-This project is a pure Rust rewrite of the JavaScript-based `@modelcontextprotocol/server-filesystem`, offering enhanced capabilities, improved performance, and a robust feature set tailored for modern filesystem interactions.
+## 🔧 What’s New in This Fork
 
-📝 Refer to the [project documentation](https://rust-mcp-stack.github.io/rust-mcp-filesystem) for installation and configuration instructions.
+- **📄 PDF Parsing** — Use `filesystem.read_pdf` (or similar) to extract text from PDF documents, not just raw bytes.  
+- **📊 Spreadsheet / Excel Parsing** — Use `filesystem.read_excel` to load structured spreadsheet data from `.xlsx` or other spreadsheet files.  
+- **🗃️ Modular Multi-Format Parser Framework** — A clean, extensible parser architecture allowing future support for CSV, Markdown, DOCX, and other document formats.  
+- **🔌 Extensible Parser Infrastructure** — Easy-to-add parser modules: drop a new format module, register it, and expose the new parsing tool via MCP without touching core filesystem code.  
+- **💡 Semantic Content Access (not just raw file access)** — Clients can ingest and manipulate content semantically — enabling text analysis, data extraction, indexing, RAG, or automation workflows directly through MCP tools.  
 
-⭐️ It's forked and extended from [Docker Hub’s MCP Registry](https://hub.docker.com/mcp/server/rust-mcp-filesystem) at: https://hub.docker.com/mcp/server/rust-mcp-filesystem
+## 🚀 Why This Matters
 
-## Extensions
-- ** Can read PDF, Excel and other file formats now, with plans to extend as needed.
+By combining filesystem operations with content-aware document parsing, this fork enables AI agents to do more than just read files — they can **understand documents**. Great for:
 
-## Features
-
-- **⚡ High Performance**: Built in Rust for speed and efficiency, leveraging asynchronous I/O to handle filesystem operations seamlessly.
-- **🔒 Read-Only by Default**: Starts with no write access, ensuring safety until explicitly configured otherwise.
-- **🔍 Advanced Glob Search**: Supports full glob pattern matching allowing precise filtering of files and directories using standard glob syntax.For example, patterns like `*.rs`, `src/**/*.txt`, and `logs/error-???.log` are valid and can be used to match specific file types, recursive directory searches, or patterned filenames.
-- **🔄 MCP Roots support**: enabling clients to dynamically modify the list of allowed directories (disabled by default).
-- **📦 ZIP Archive Support**: Tools to create ZIP archives from files or directories and extract ZIP files with ease.
-- **🪶 Lightweight**: Standalone with no external dependencies (e.g., no Node.js, Python etc required), compiled to a single binary with a minimal resource footprint, ideal for both lightweight and extensive deployment scenarios.
-
-#### 👉 Refer to [capabilities](https://rust-mcp-stack.github.io/rust-mcp-filesystem/#/capabilities) for a full list of tools and other capabilities.
-
-## 🔧 Installation & Configuration
-
-For detailed setup instructions, please visit the [project documentation](https://rust-mcp-stack.github.io/rust-mcp-filesystem).
-
-
-### Quick installation guide
-
-
-<!-- x-release-please-start-version -->
-- **Shell script**
-```sh
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/rust-mcp-stack/rust-mcp-filesystem/releases/download/v0.3.6/rust-mcp-filesystem-installer.sh | sh
-```
-
-- **PowerShell script**
-```sh
-powershell -ExecutionPolicy Bypass -c "irm https://github.com/rust-mcp-stack/rust-mcp-filesystem/releases/download/v0.3.6/rust-mcp-filesystem-installer.ps1 | iex"
-```
-
-- **Homebrew**
-```sh
-brew install rust-mcp-stack/tap/rust-mcp-filesystem
-```
-- **Docker**
-
-  https://hub.docker.com/mcp/server/rust-mcp-filesystem
-
-- **Download Binaries**
-
-  https://github.com/rust-mcp-stack/rust-mcp-filesystem/releases/tag/v0.3.6
-
-<!-- x-release-please-end -->
-
-
-## Purpose
-
-This project aims to provide a reliable, secure, and feature-rich MCP server for filesystem management, reimagining the capabilities of @modelcontextprotocol/server-filesystem in a more performant and type-safe language. Whether you’re building tools for file exploration, automation, or system integration, rust-mcp-filesystem offers a solid foundation.
+- document analysis workflows (PDF reports, manuals, logs)  
+- data extraction from spreadsheets / tables  
+- building RAG-based assistants with “read my docs and know everything” capabilities  
+- scripts and pipelines that need structured data from user uploads  
 
 ## 🧰 Built With
 
-The project leverages the [rust-mcp-sdk](https://github.com/rust-mcp-stack/rust-mcp-sdk) and [rust-mcp-schema](https://github.com/rust-mcp-stack/rust-mcp-schema) to build this server. check out those repositories if you’re interested in crafting your own Rust-based MCP project or converting existing ones to Rust for enhanced performance and safety.
+- [rust-mcp-sdk](https://github.com/rust-mcp-stack/rust-mcp-sdk) — core toolkit for MCP server implementation :contentReference[oaicite:2]{index=2}  
+- [rust-mcp-schema](https://github.com/rust-mcp-stack/rust-mcp-schema) — official MCP protocol schema support for Rust :contentReference[oaicite:3]{index=3}  
+- The existing `rust-mcp-filesystem` core — for filesystem and glob support :contentReference[oaicite:4]{index=4}  
 
-## License
+## ⚙️ Example Tool Calls
 
-This project is licensed under the MIT License. see the [LICENSE](LICENSE) file for details.
+```jsonc
+// Read text from a PDF file
+{
+  "method": "filesystem.read_pdf",
+  "params": {
+    "path": "documents/report.pdf"
+  }
+}
 
-## Acknowledgments
+// Read a sheet from an Excel workbook
+{
+  "method": "filesystem.read_excel",
+  "params": {
+    "path": "data/financials.xlsx",
+    "sheet": "Q4"
+  }
+}
+````
 
-Inspired by `@modelcontextprotocol/server-filesystem` and built with the power of Rust.
+## 🎯 Use Cases
+
+* AI assistants that need to ingest user-supplied documents (PDF, spreadsheet) and answer questions
+* RAG / vector-store pipelines that automatically index mixed-format documents
+* Internal tools for data extraction from Excel reports or tabular logs
+* Automated document analysis & summarization workflows
+* Anything where “filesystem + document semantics” is more powerful than “filesystem alone”
+
+## 📦 Installation & Configuration
+
+Refer to the original installation instructions from `rust-mcp-filesystem`. This fork installs and runs in the same way; the additional parser tools are simply available to clients once the server is up.
+
+### Quick install (example with shell script)
+
+```sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/<your-username>/rust-mcp-filesystem-parsers/releases/download/v0.x.y/installer.sh | sh
+```
+
+### Docker / Binary / Homebrew / etc.
+
+Same options as upstream — this fork preserves the lightweight, dependency-free binary distribution model.
+
+## 🔗 Repository
+
+Read the source and browse the code: [https://github.com/Joseffb/rust-mcp-filesystem-parsers](https://github.com/Joseffb/rust-mcp-filesystem-parsers)
+
+---
+
+## 🧬 License
+
+MIT License — same as the upstream project.
+
+---
+
+## 📦 Acknowledgments
+
+* This project builds on the original `rust-mcp-filesystem` by rust-mcp-stack. ([GitHub][1])
+* Thanks to the authors and maintainers of `rust-mcp-sdk` and `rust-mcp-schema` for providing the core Rust MCP tooling. ([GitHub][2])
