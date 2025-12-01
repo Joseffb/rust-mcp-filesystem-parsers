@@ -9,7 +9,10 @@ This project is a pure Rust rewrite of the JavaScript-based `@modelcontextprotoc
 
 📝 Refer to the [project documentation](https://rust-mcp-stack.github.io/rust-mcp-filesystem) for installation and configuration instructions.
 
-⭐️ It is also available on [Docker Hub’s MCP Registry](https://hub.docker.com/mcp/server/rust-mcp-filesystem) at: https://hub.docker.com/mcp/server/rust-mcp-filesystem
+⭐️ It's forked and extended from [Docker Hub’s MCP Registry](https://hub.docker.com/mcp/server/rust-mcp-filesystem) at: https://hub.docker.com/mcp/server/rust-mcp-filesystem
+
+## Extensions
+- ** Can read PDF, Excel and other file formats now, with plans to extend as needed.
 
 ## Features
 
