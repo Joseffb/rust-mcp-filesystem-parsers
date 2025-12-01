@@ -83,5 +83,5 @@ MIT License — same as the upstream project.
 
 ## 📦 Acknowledgments
 
-* This project builds on the original `rust-mcp-filesystem` by rust-mcp-stack. ([GitHub][1])
-* Thanks to the authors and maintainers of `rust-mcp-sdk` and `rust-mcp-schema` for providing the core Rust MCP tooling. ([GitHub][2])
+* This project builds on the original `rust-mcp-filesystem` by rust-mcp-stack. ([GitHub](https://github.com/rust-mcp-stack))
+* Thanks to the authors and maintainers of `rust-mcp-sdk` and `rust-mcp-schema` for providing the core Rust MCP tooling. ([GitHub](https://github.com/rust-mcp-stack/rust-mcp-filesystem))
